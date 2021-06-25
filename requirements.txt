@@ -21,3 +21,5 @@ urllib3==1.22
 wcwidth==0.1.7
 Werkzeug==0.12.2
 wit==5.0.0
+sudo -H pip install gitsome
+gitsome==0.4.0
