@@ -22,8 +22,8 @@ load_dotenv(find_dotenv())
 class ChatbotHandler():
 
     def __init__(self, load_clients, redis=None):
-        self.handler = WebhookHandler(os.environ.get('d4a9b6774ac435afc29b7cca29b5f285'))
-        self.bot = LineBotApi(os.environ.get('7SbmxoVTkT9XnXS+ZuNP2rwDRUHxJGPO5fSHv5b5noM/HwoIIejSSk9f44nf49dFx3pENph0o1z2JqY2DVMv8MD98OSA/w9hdfdiQG9FLjazL56cPl5ky2gnBCvhHRU0U/3A/tc5U6BcTNh2TvpMuwdB04t89/1O/w1cDnyilFU='))
+        self.handler = WebhookHandler(os.environ.get('CHANNEL_SECRET'))
+        self.bot = LineBotApi(os.environ.get('CHANNEL_ACCESS_TOKEN'))
         load_clients(ClientHandler(self.handler, self.bot, redis)).start()
 
     def handle(self, request, logger=None):
